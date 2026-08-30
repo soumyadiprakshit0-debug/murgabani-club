@@ -1,0 +1,266 @@
+.contact-header{
+    background:#0d2344;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contact-header h1{
+    color:#d4af37;
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.contact-header p{
+    color:#fff;
+    font-size:20px;
+}
+.contact-info{
+    padding:70px 20px;
+    background:#f8f9fc;
+}
+
+.contact-info h2{
+    text-align:center;
+    font-size:36px;
+    color:#0d2344;
+    margin-bottom:40px;
+}
+
+.info-card{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.info-card p{
+    color:#555;
+    line-height:2;
+    font-size:18px;
+}
+.quick-contact{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.quick-contact h2{
+    color:#0d2344;
+    font-size:36px;
+    margin-bottom:35px;
+}
+
+.button-group{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.contact-btn{
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:40px;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.call-btn{
+    background:#0d2344;
+}
+
+.whatsapp-btn{
+    background:#25D366;
+}
+
+.email-btn{
+    background:#d4af37;
+    color:#0d2344;
+}
+
+.contact-btn:hover{
+    transform:translateY(-5px);
+}
+.contact-form{
+    padding:80px 20px;
+    background:#f8f9fc;
+}
+
+.contact-form h2{
+    text-align:center;
+    color:#0d2344;
+    font-size:36px;
+    margin-bottom:35px;
+}
+
+.contact-form form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.contact-form textarea{
+    resize:vertical;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    background:#d4af37;
+    color:#0d2344;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:#0d2344;
+    color:white;
+}
+.map-section{
+    padding:80px 20px;
+}
+
+.map-section h2{
+    text-align:center;
+    color:#0d2344;
+    font-size:36px;
+    margin-bottom:35px;
+}
+
+.map-container{
+    max-width:1000px;
+    margin:auto;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.social-section{
+    padding:80px 20px;
+    background:#0d2344;
+    text-align:center;
+}
+
+.social-section h2{
+    color:#d4af37;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.social-section p{
+    color:#fff;
+    max-width:700px;
+    margin:0 auto 35px;
+    line-height:1.8;
+}
+
+.social-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-btn{
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:30px;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.instagram{
+    background:#E1306C;
+}
+
+.youtube{
+    background:#FF0000;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.social-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* =================================
+   BACK TO HOME BUTTON
+================================= */
+
+.contact-header{
+    position:relative;
+}
+
+.back-home{
+    position:absolute;
+    top:20px;
+    left:20px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    padding:9px 16px;
+
+    background:rgba(255,255,255,.08);
+    color:#d4af37;
+
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+
+    border:1px solid #d4af37;
+    border-radius:8px;
+
+    transition:all .3s ease;
+}
+
+.back-home:hover{
+    background:#d4af37;
+    color:#0d2344;
+    transform:translateX(-3px);
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:768px){
+
+    .back-home{
+        top:15px;
+        left:15px;
+
+        padding:8px 13px;
+        font-size:14px;
+    }
+
+}

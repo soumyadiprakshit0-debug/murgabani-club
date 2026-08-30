@@ -1,0 +1,655 @@
+/* ===============================
+   Membership Application
+================================ */
+
+.apply-header{
+
+    position:relative;
+
+    background:#0d2344;
+    color:white;
+
+    text-align:center;
+
+    padding:90px 20px 70px;
+
+}
+
+
+/* ===============================
+   Back To Home
+================================ */
+
+.membership-back-home{
+
+    position:absolute;
+
+    top:25px;
+    left:25px;
+
+    display:inline-flex;
+    align-items:center;
+
+    padding:11px 18px;
+
+    background:#0d2344;
+    color:#d4af37;
+
+    border:1px solid #d4af37;
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:bold;
+
+    transition:.3s ease;
+
+}
+
+
+.membership-back-home:hover{
+
+    background:#d4af37;
+    color:#0d2344;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ===============================
+   Header
+================================ */
+
+.apply-header h1{
+
+    color:#d4af37;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+
+.apply-header p{
+
+    font-size:20px;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.6;
+
+}
+
+
+/* ===============================
+   Form Section
+================================ */
+
+.apply-section{
+
+    background:#f5f7fb;
+
+    padding:60px 20px;
+
+}
+
+
+.apply-card{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+.apply-card h2{
+
+    text-align:center;
+
+    color:#0d2344;
+
+    margin-bottom:30px;
+
+    font-size:32px;
+
+}
+
+
+/* ===============================
+   Form Groups
+================================ */
+
+.form-group{
+
+    margin-bottom:22px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#222;
+
+}
+
+
+.form-group label span{
+
+    color:red;
+
+}
+
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ccc;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+    transition:.3s;
+
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    border-color:#d4af37;
+
+    outline:none;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,.3);
+
+}
+
+
+textarea{
+
+    resize:vertical;
+
+}
+
+
+/* ===============================
+   Checkbox
+================================ */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+
+.checkbox input{
+
+    margin-top:4px;
+
+    transform:scale(1.2);
+
+}
+
+
+.checkbox label{
+
+    font-size:15px;
+
+    line-height:1.5;
+
+}
+
+
+/* ===============================
+   Submit Button
+================================ */
+
+#submitBtn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#d4af37;
+
+    color:#0d2344;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+#submitBtn:hover{
+
+    background:#0d2344;
+
+    color:#fff;
+
+}
+
+
+#submitBtn:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ==================================================
+   SUCCESS MODAL
+================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(3,12,25,.70);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10000;
+
+    padding:20px;
+
+}
+
+
+.modal-content{
+
+    background:#fff;
+
+    width:90%;
+
+    max-width:400px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    animation:popup .3s ease;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+
+}
+
+
+.success-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+
+.modal-content h2{
+
+    color:#0d2344;
+
+    margin-bottom:15px;
+
+}
+
+
+.modal-content p{
+
+    line-height:1.6;
+
+    color:#555;
+
+    margin-bottom:25px;
+
+}
+
+
+.modal-content button{
+
+    padding:12px 35px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0d2344;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+/* ==================================================
+   VALIDATION / ERROR MODAL
+================================================== */
+
+.message-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(3,12,25,.70);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:11000;
+
+    padding:20px;
+
+}
+
+
+.message-modal-content{
+
+    width:90%;
+
+    max-width:400px;
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.30);
+
+    animation:popup .3s ease;
+
+}
+
+
+.message-icon{
+
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff4d6;
+
+    font-size:34px;
+
+}
+
+
+.message-modal-content h2{
+
+    color:#0d2344;
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+
+.message-modal-content p{
+
+    color:#555;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+    white-space:pre-line;
+
+}
+
+
+.message-modal-content button{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0d2344;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.message-modal-content button:hover{
+
+    background:#d4af37;
+
+    color:#0d2344;
+
+}
+
+
+/* ===============================
+   Loading Spinner
+================================ */
+
+.loading-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.85);
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+}
+
+
+.spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid #ddd;
+
+    border-top:6px solid #0d2344;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+    margin-bottom:15px;
+
+}
+
+
+.loading-overlay p{
+
+    font-size:18px;
+
+    color:#0d2344;
+
+    font-weight:bold;
+
+}
+
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.80);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ===============================
+   Mobile
+================================ */
+
+@media(max-width:768px){
+
+    .apply-header{
+
+        padding:90px 20px 55px;
+
+    }
+
+
+    .membership-back-home{
+
+        top:18px;
+
+        left:15px;
+
+        padding:9px 14px;
+
+        font-size:14px;
+
+    }
+
+
+    .apply-header h1{
+
+        font-size:34px;
+
+    }
+
+
+    .apply-header p{
+
+        font-size:17px;
+
+    }
+
+
+    .apply-card{
+
+        padding:25px;
+
+    }
+
+
+    .apply-card h2{
+
+        font-size:28px;
+
+    }
+
+}
