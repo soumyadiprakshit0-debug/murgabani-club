@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Membership Application | MURGABANI 1 TO 100 CLUB</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/membership-application.css">
+
+</head>
+
+<body>
+
+<header class="apply-header">
+
+    <!-- Back to Home -->
+    <a href="index.html" class="membership-back-home">
+        ❮ Back to Home
+    </a>
+
+    <h1>Become a Member</h1>
+
+    <p>
+        Join MURGABANI 1 TO 100 CLUB by submitting your membership application.
+    </p>
+
+</header>
+
+
+<section class="apply-section">
+
+<div class="apply-card">
+
+<h2>Membership Application</h2>
+
+<form id="applicationForm">
+
+<div class="form-group">
+
+<label>
+    Full Name <span>*</span>
+</label>
+
+<input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Enter your full name"
+    autocomplete="name"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Mobile Number <span>*</span>
+</label>
+
+<input
+    type="tel"
+    id="mobile"
+    name="mobile"
+    placeholder="Enter 10 digit mobile number"
+    inputmode="numeric"
+    maxlength="10"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+    Email Address <span>*</span>
+</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your Gmail address"
+    autocomplete="email"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Why do you want to join our club?
+</label>
+
+<textarea
+    id="reason"
+    rows="5"
+    placeholder="Write a short reason..."
+></textarea>
+
+</div>
+
+
+<div class="checkbox">
+
+<input
+    type="checkbox"
+    id="agree"
+    required
+>
+
+<label for="agree">
+    I agree to follow all club rules and regulations.
+</label>
+
+</div>
+
+
+<button type="submit" id="submitBtn">
+    Submit Application
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ==========================================
+     SUCCESS MODAL
+========================================== -->
+
+<div id="successModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="success-icon">✅</div>
+
+        <h2>Application Submitted</h2>
+
+        <p id="successMessage">
+            Your application has been submitted successfully.
+        </p>
+
+        <button onclick="closeSuccessModal()">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     VALIDATION / ERROR MODAL
+========================================== -->
+
+<div id="messageModal" class="message-modal">
+
+    <div class="message-modal-content">
+
+        <div id="messageIcon" class="message-icon">
+            ⚠️
+        </div>
+
+        <h2 id="messageTitle">
+            Please Check
+        </h2>
+
+        <p id="messageText">
+            Please check the information you entered.
+        </p>
+
+        <button
+            type="button"
+            onclick="closeMessageModal()"
+        >
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     LOADING
+========================================== -->
+
+<div id="loadingOverlay" class="loading-overlay">
+
+    <div class="spinner"></div>
+
+    <p>Submitting Application...</p>
+
+</div>
+
+
+<script src="js/membership-application.js"></script>
+
+</body>
+</html>

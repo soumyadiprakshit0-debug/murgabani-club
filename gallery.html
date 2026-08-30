@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Gallery | MURGABANI 1 TO 100 CLUB
+    </title>
+
+    <!-- Main Website CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- Gallery CSS -->
+    <link
+        rel="stylesheet"
+        href="css/gallery.css"
+    >
+
+    <!-- Gallery JavaScript -->
+    <script
+        src="js/gallery.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     GALLERY HERO
+================================================== -->
+
+<header class="gallery-hero">
+
+
+    <!-- BACK TO HOME BUTTON -->
+
+    <a
+        href="index.html"
+        class="gallery-back-home"
+    >
+       ❮ Back to Home
+    </a>
+
+
+    <div class="gallery-hero-content">
+
+
+        <div class="gallery-est">
+            ESTABLISHED • 2013
+        </div>
+
+
+        <h1>
+            Gallery
+        </h1>
+
+
+        <div class="gold-line"></div>
+
+
+        <p>
+            Memories of our celebrations,
+            social work and club activities.
+        </p>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     GALLERY CATEGORIES
+================================================== -->
+
+<section
+    class="gallery-section"
+    id="categorySection"
+>
+
+
+    <div class="gallery-heading">
+
+
+        <span class="section-label">
+            OUR MEMORIES
+        </span>
+
+
+        <h2>
+            Moments That
+            <span>Bring Us Together</span>
+        </h2>
+
+
+        <p>
+            Explore memories from our celebrations,
+            traditions and social activities.
+        </p>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         CATEGORY CARDS
+    ================================================== -->
+
+    <div class="category-grid">
+
+
+        <!-- ==============================
+             SARASWATI PUJA
+        =============================== -->
+
+        <div
+            class="category-card"
+            data-gallery="saraswati"
+        >
+
+            <div class="category-image">
+
+                <img
+                    src="images/Saraswati/sp1.jpg"
+                    alt="Saraswati Puja"
+                    loading="lazy"
+                >
+
+
+                <div class="category-overlay">
+
+                    <span>
+                        VIEW GALLERY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="category-content">
+
+
+                <span class="category-label">
+                    RELIGIOUS • SINCE 2013
+                </span>
+
+
+                <h3>
+                    🌸 Saraswati Puja
+                </h3>
+
+
+                <p>
+                    Memories of our annual
+                    Saraswati Puja celebration.
+                </p>
+
+
+                <div class="view-gallery">
+                    Explore Photos →
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==============================
+             KOJAGARI LAXMI PUJA
+        =============================== -->
+
+        <div
+            class="category-card"
+            data-gallery="laxmi"
+        >
+
+            <div class="category-image">
+
+                <img
+                    src="images/Laxmi/lp1.jpg"
+                    alt="Kojagari Lakshmi Puja"
+                    loading="lazy"
+                >
+
+
+                <div class="category-overlay">
+
+                    <span>
+                        VIEW GALLERY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="category-content">
+
+
+                <span class="category-label">
+                    RELIGIOUS • SINCE 2020
+                </span>
+
+
+                <h3>
+                    🪔 Kojagari Lakshmi Puja
+                </h3>
+
+
+                <p>
+                    Memories of our Kojagari
+                    Lakshmi Puja celebrations.
+                </p>
+
+
+                <div class="view-gallery">
+                    Explore Photos →
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==============================
+             SOCIAL ACTIVITIES
+        =============================== -->
+
+        <div
+            class="category-card"
+            data-gallery="activities"
+        >
+
+            <div class="category-image">
+
+                <img
+                    src="images/Activities/a0.jpg"
+                    alt="Club Social Activities"
+                    loading="lazy"
+                >
+
+
+                <div class="category-overlay">
+
+                    <span>
+                        VIEW GALLERY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="category-content">
+
+
+                <span class="category-label">
+                    COMMUNITY • SERVICE
+                </span>
+
+
+                <h3>
+                    🌱 Social Activities
+                </h3>
+
+
+                <p>
+                    Tree plantation, community
+                    service and club activities.
+                </p>
+
+
+                <div class="view-gallery">
+                    Explore Photos →
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SELECTED PHOTO GALLERY
+================================================== -->
+
+<section
+    class="photo-gallery-section"
+    id="photoGallerySection"
+>
+
+
+    <div class="photo-gallery-header">
+
+
+        <button
+            type="button"
+            class="back-gallery"
+            id="backGalleryBtn"
+        >
+            ← All Categories
+        </button>
+
+
+        <span
+            class="section-label"
+            id="galleryLabel"
+        >
+            GALLERY
+        </span>
+
+
+        <h2 id="galleryTitle">
+            Gallery
+        </h2>
+
+
+        <p id="galleryDescription">
+            Explore our memories.
+        </p>
+
+
+    </div>
+
+
+
+    <!-- PHOTOS ARE GENERATED BY gallery.js -->
+
+    <div
+        class="photo-grid"
+        id="photoGrid"
+    ></div>
+
+
+</section>
+
+
+
+<!-- ==================================================
+     FULLSCREEN IMAGE VIEWER
+================================================== -->
+
+<div
+    id="galleryViewer"
+    class="gallery-viewer"
+    aria-hidden="true"
+>
+
+
+    <button
+        type="button"
+        class="gallery-close"
+        id="galleryClose"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+
+    <img
+        id="viewerImage"
+        src=""
+        alt="Gallery image"
+    >
+
+
+</div>
+
+
+</body>
+
+</html>

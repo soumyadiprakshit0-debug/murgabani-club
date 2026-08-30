@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | MURGABANI 1 TO 100 CLUB</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(sessionStorage.getItem("loggedIn")!=="true"){
+
+    alert("Please login first.");
+
+    window.location.href="login.html";
+
+}
+
+function logout(){
+
+    sessionStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("memberName");
+    sessionStorage.removeItem("memberRole");
+
+    window.location.replace("login.html");
+
+}
+
+</script>
+
+<header>
+
+<div>
+
+<h2>MURGABANI 1 TO 100 CLUB</h2>
+<h3 class="dashboard-title">Admin Dashboard</h3>
+<p id="welcome"></p>
+
+</div>
+
+<button class="logout-btn" onclick="logout()">
+
+Logout
+
+</button>
+
+</header>
+
+<div class="container">
+
+<div class="filter-box">
+
+<h3>Dashboard Filters</h3>
+
+<div class="filter-row">
+
+<div class="filter-group">
+
+<label>Year</label>
+
+<select id="year">
+
+<option>Loading...</option>
+
+</select>
+
+</div>
+
+<div class="filter-group">
+
+<label>Puja</label>
+
+<select id="puja">
+
+<option>Loading...</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="loading" id="loading">
+
+Loading Dashboard...
+
+</div>
+  <h3 class="overview-title">
+    📊 Dashboard Overview
+</h3>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>👥 Total Members</h3>
+
+<h2 id="members">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>💰 Total Collection</h3>
+
+<h2 id="collection">₹0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🧾 Total Expenses</h3>
+
+<h2 id="expenses">₹0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>💵 Balance</h3>
+
+<h2 id="balance">₹0</h2>
+
+</div>
+
+</div>
+</div>
+<!-- Management Modules -->
+
+<div class="module-section">
+
+    <h3 class="module-title">Management Modules</h3>
+
+    <div class="module-grid">
+
+        <div class="module-card" id="roadCollectionBtn">
+            <div class="module-icon">🚗</div>
+            <div class="module-name">Enter Road Collection</div>
+        </div>
+
+        <div class="module-card" id="villageCollectionBtn">
+            <div class="module-icon">🏠</div>
+            <div class="module-name">Enter Village Collection</div>
+        </div>
+
+        <div class="module-card" id="memberCollectionBtn">
+            <div class="module-icon">👥</div>
+            <div class="module-name">Enter Members Collection</div>
+        </div>
+
+        <div class="module-card" id="expenseBtn">
+            <div class="module-icon">💸</div>
+            <div class="module-name">Enter Expenses</div>
+        </div>
+
+        <div class="module-card" id="reportBtn">
+            <div class="module-icon">📊</div>
+            <div class="module-name">Reports</div>
+        </div>
+
+        <div class="module-card" id="memberManageBtn">
+            <div class="module-icon">👤</div>
+            <div class="module-name">Manage Members</div>
+        </div>
+
+        <div class="module-card" id="analyticsBtn">
+            <div class="module-icon">📈</div>
+            <div class="module-name">Analytics</div>
+        </div>
+
+        <div class="module-card" id="settingsBtn">
+            <div class="module-icon">⚙️</div>
+            <div class="module-name">Settings</div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

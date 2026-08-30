@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Road Collection</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/road-collection.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+     TOP NAVIGATION
+========================== -->
+
+<!-- ==========================
+     BACK BUTTON
+========================== -->
+
+<div class="road-topbar">
+
+    <button
+        type="button"
+        id="backDashboardBtn"
+        class="back-dashboard">
+        ❮ Back to Dashboard
+    </button>
+
+</div>
+  
+<div class="container">
+
+    <h2>🚛 Road Collection</h2>
+
+    <!-- SEARCH CARD -->
+
+    <div class="card">
+
+        <label>Vehicle Number</label>
+
+        <input
+            type="text"
+            id="vehicleNo"
+            placeholder="Enter Vehicle Number"
+            autocomplete="off">
+
+        <button id="searchBtn">
+            Search
+        </button>
+
+    </div>
+
+    <!-- LOADING -->
+
+    <div
+        id="loading"
+        class="loading hidden">
+
+        Searching...
+
+    </div>
+
+    <!-- ALREADY COLLECTED -->
+
+    <div
+        id="alreadyCollected"
+        class="card hidden">
+
+        <h3>Already Collected</h3>
+
+        <p><b>Vehicle:</b> <span id="aVehicle"></span></p>
+
+        <p><b>Type:</b> <span id="aType"></span></p>
+
+        <p><b>Amount:</b> ₹<span id="aAmount"></span></p>
+
+        <p><b>Collector:</b> <span id="aCollector"></span></p>
+
+        <p><b>Date:</b> <span id="aDate"></span></p>
+
+        <button id="searchAgainBtn">
+            Search Another Vehicle
+        </button>
+
+    </div>
+
+    <!-- COLLECTION FORM -->
+
+    <div
+        id="collectionForm"
+        class="card hidden">
+
+        <input type="hidden" id="date">
+
+        <label>Vehicle Type</label>
+
+        <select id="vehicleType">
+
+            <option value="">Select</option>
+
+            <option>Truck</option>
+            <option>Truck (407)</option>
+            <option>Truck (AC Car)</option>
+            <option>Bus</option>
+            <option>Private Car</option>
+            <option>Toto</option>
+            <option>Bike</option>
+            <option>Tractor</option>
+            <option>Others</option>
+
+        </select>
+
+        <label>Amount</label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter Amount">
+
+
+        <button id="saveBtn">
+            Save Collection
+        </button>
+
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div
+        id="message"
+        class="hidden">
+
+        <div class="card success-card">
+
+            <h3>✅ Collection Saved</h3>
+
+            <p>
+                <b>Collection ID :</b>
+                <span id="mCollectionId"></span>
+            </p>
+
+            <p>
+                <b>Vehicle No :</b>
+                <span id="mVehicle"></span>
+            </p>
+
+            <p>
+                <b>Amount :</b>
+                ₹<span id="mAmount"></span>
+            </p>
+
+            <button id="nextBtn">
+                Collect Another Vehicle
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/road-collection.js"></script>
+
+</body>
+</html>

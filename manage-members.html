@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Members</title>
+
+<link rel="stylesheet" href="css/manage-members.css">
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+    <button id="backBtn">⏪</button>
+
+    <h1>👥 Manage Members</h1>
+
+</header>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchMember"
+        placeholder="🔍 Search Member">
+
+    <button id="addMemberBtn">
+        ➕ Add Member
+    </button>
+
+    <button id="membershipRequestsBtn">
+    📋 Membership Requests
+    <span id="requestCount" class="request-badge">0</span>
+</button>
+
+</div>
+
+<!-- Members Table -->
+
+<div class="table-card" id="membersTableCard">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Role</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="memberTableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Membership Requests -->
+
+<section id="membershipRequestsSection" style="display:none;">
+
+<div class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Request ID</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="requestTableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- Add Member Modal -->
+
+<div id="memberModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Add New Member</h2>
+
+<input
+type="text"
+id="memberName"
+placeholder="Member Name">
+
+<input
+type="tel"
+id="memberMobile"
+placeholder="Mobile Number">
+
+<input
+type="email"
+id="memberEmail"
+placeholder="Email">
+
+<select id="memberRole">
+
+<option value="Member">Member</option>
+<option value="Admin">Admin</option>
+<option value="President">President</option>
+<option value="Secretary">Secretary</option>
+<option value="Treasurer">Treasurer</option>
+
+</select>
+
+<div class="modal-buttons">
+
+<button id="saveMemberBtn">
+
+Save Member
+
+</button>
+
+<button id="closeModalBtn">
+
+Cancel
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Membership Request Modal -->
+
+<div id="requestModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Membership Request</h2>
+
+<p>
+
+<strong>Request ID:</strong>
+
+<span id="reqId"></span>
+
+</p>
+
+<p>
+
+<strong>Name:</strong>
+
+<span id="reqName"></span>
+
+</p>
+
+<p>
+
+<strong>Mobile:</strong>
+
+<span id="reqMobile"></span>
+
+</p>
+
+<p>
+
+<strong>Email:</strong>
+
+<span id="reqEmail"></span>
+
+</p>
+
+<p>
+
+<strong>Reason:</strong>
+
+</p>
+
+<textarea
+id="reqReason"
+rows="4"
+readonly></textarea>
+
+<p>
+
+<strong>Status:</strong>
+
+<span id="reqStatus"></span>
+
+</p>
+
+<div class="modal-buttons">
+
+<button
+id="rejectRequestBtn"
+class="reject-btn">
+
+❌ Reject
+
+</button>
+
+<button
+id="acceptRequestBtn"
+class="accept-btn">
+
+✅ Accept
+
+</button>
+
+<button
+id="closeRequestModalBtn">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="modal">
+
+    <div class="modal-content success-modal">
+
+        <div class="success-icon">✅</div>
+
+        <h2>Member Approved</h2>
+
+        <p class="success-subtitle">
+            Applicant has been added successfully.
+        </p>
+
+        <div class="success-details">
+
+            <p><strong>Member ID</strong><span id="smMemberId"></span></p>
+
+            <p><strong>Name</strong><span id="smName"></span></p>
+
+            <p><strong>Mobile</strong><span id="smMobile"></span></p>
+
+            <p><strong>Email</strong><span id="smEmail"></span></p>
+
+            <p><strong>Role</strong><span id="smRole"></span></p>
+
+            <p><strong>Password</strong><span id="smPassword"></span></p>
+
+            <p><strong>Status</strong><span id="smStatus"></span></p>
+
+            <p><strong>Join Date</strong><span id="smJoinDate"></span></p>
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <button id="copyPasswordBtn">
+                📋 Copy Password
+            </button>
+
+            <button id="closeSuccessBtn">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Reject Confirmation Modal -->
+<div id="rejectModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 style="color:#d32f2f;">⚠ Reject Request</h2>
+
+        <p>
+            Are you sure you want to reject this membership request?
+        </p>
+
+        <p><b>Request ID:</b> <span id="rejectReqId"></span></p>
+
+        <p><b>Name:</b> <span id="rejectReqName"></span></p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelRejectBtn">
+                Cancel
+            </button>
+
+            <button id="confirmRejectBtn" class="reject-btn">
+                ❌ Reject
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="editMemberModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>✏ Edit Member</h2>
+
+        <input type="hidden" id="editMemberId">
+
+        <label for="editName">Name</label>
+<input type="text" id="editName">
+
+        <label for="editMobile">Mobile Number</label>
+<input type="tel" id="editMobile">
+
+        <label for="editEmail">Email Address</label>
+<input type="email" id="editEmail">
+
+       <label for="editRole">Role</label>
+<select id="editRole"> 
+            <option>Member</option>
+            <option>Admin</option>
+            <option>President</option>
+            <option>Secretary</option>
+            <option>Treasurer</option>
+        </select>
+
+       <label for="editPassword">Password</label>
+<input type="text" id="editPassword"> 
+
+        <label for="editStatus">Status</label>
+<select id="editStatus">
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+
+        <div class="modal-buttons">
+
+            <button id="updateMemberBtn">
+                💾 Update
+            </button>
+
+            <button id="closeEditModalBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+  
+<!-- Toast -->
+
+<div id="toast" class="toast">
+
+<span id="toastIcon"></span>
+
+<span id="toastMessage"></span>
+
+</div>
+
+<script src="js/manage-members.js"></script>
+
+</body>
+
+</html>
