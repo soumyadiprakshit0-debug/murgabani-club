@@ -457,11 +457,19 @@ function closeModal(){
 
 })/
 
-*/
+
 document.getElementById("roadCollectionBtn").addEventListener("click", () => {
     navigateTo("road-collection.html");
-});
+});*/
 
+
+document.getElementById("roadCollectionBtn").addEventListener("click", () => {
+
+    sessionStorage.setItem("returnDashboard", "member-dashboard.html");
+
+    navigateTo("road-collection.html");
+
+});
 
 // ==========================
 // Village Collection Button
