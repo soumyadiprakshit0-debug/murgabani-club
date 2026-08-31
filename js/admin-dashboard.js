@@ -189,11 +189,20 @@ loadDashboardInit();
 // ==========================
 // Road Collection Button
 // ==========================
+/*document.getElementById("roadCollectionBtn").addEventListener("click", () => {
+
+    window.location.assign("road-collection.html");
+
+});*/
+
 document.getElementById("roadCollectionBtn").addEventListener("click", () => {
+
+    sessionStorage.setItem("returnDashboard", "admin-dashboard.html");
 
     window.location.assign("road-collection.html");
 
 });
+
 // ==========================
 // Village Collection Button
 // ==========================
