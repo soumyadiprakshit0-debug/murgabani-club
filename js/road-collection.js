@@ -536,14 +536,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    }*/
+    }
 
         if (backDashboardBtn) {
     backDashboardBtn.addEventListener("click", () => {
         window.location.replace("member-dashboard.html");
     });
-}
+}*/
 
+
+if (backDashboardBtn) {
+    backDashboardBtn.addEventListener("click", () => {
+
+        const returnDashboard =
+            sessionStorage.getItem("returnDashboard");
+
+        if (returnDashboard) {
+            window.location.replace(returnDashboard);
+        } else {
+            // Safe fallback
+            window.location.replace("member-dashboard.html");
+        }
+
+    });
+}
         
 
     // ============================================================
