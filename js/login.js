@@ -67,15 +67,15 @@ sessionStorage.setItem("memberRole", result.role);
 
   if (result.mustChangePassword) {
 
-    location.href = "/change-password.html";
+    location.href = "./change-password.html";
 
 } else if (result.role === "Admin") {
 
-    location.href = "/admin-dashboard.html";
+    location.href = "./admin-dashboard.html";
 
 } else {
 
-    location.href = "/member-dashboard.html";
+    location.href = "./member-dashboard.html";
 
 } 
 
