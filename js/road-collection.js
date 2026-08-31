@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // BACK TO DASHBOARD
     // ============================================================
 
-   /* if (backDashboardBtn) {
+    if (backDashboardBtn) {
 
         backDashboardBtn.addEventListener(
             "click",
@@ -534,22 +534,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    }*/
+    }
 
         
-const backDashboardBtn =
-        document.getElementById("backDashboardBtn");
-
-    if (backDashboardBtn) {
-
-        backDashboardBtn.addEventListener("click", () => {
-
-            // Go back to the page that opened Road Collection
-            window.history.back();
-
-        });
-
-    }
 
     // ============================================================
     // CUSTOM ALERT
