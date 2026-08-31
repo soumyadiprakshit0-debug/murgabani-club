@@ -492,6 +492,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const backDashboardBtn =
         document.getElementById("backDashboardBtn");
 
+        
+
 
     // ============================================================
     // BASIC ELEMENT CHECK
@@ -523,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // BACK TO DASHBOARD
     // ============================================================
 
-    if (backDashboardBtn) {
+  /*  if (backDashboardBtn) {
 
         backDashboardBtn.addEventListener(
             "click",
@@ -534,7 +536,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-    }
+    }*/
+
+        if (backDashboardBtn) {
+    backDashboardBtn.addEventListener("click", () => {
+        window.location.replace("member-dashboard.html");
+    });
+}
 
         
 
