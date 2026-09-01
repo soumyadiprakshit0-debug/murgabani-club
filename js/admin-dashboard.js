@@ -2,6 +2,23 @@
 // MURGABANI CLUB
 // Admin Dashboard
 // ======================================
+// ======================================
+// ADMIN ACCESS PROTECTION
+// ======================================
+
+const loggedIn = sessionStorage.getItem("loggedIn");
+const memberRole = sessionStorage.getItem("memberRole");
+
+if (loggedIn !== "true" || memberRole !== "Admin") {
+
+    alert("Access denied. Admin login required.");
+
+    window.location.replace("login.html");
+
+    throw new Error("Unauthorized admin access");
+
+}
+
 
 // ==========================
 // Disable Browser Back Button
