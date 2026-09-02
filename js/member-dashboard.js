@@ -318,7 +318,7 @@ async function loadDashboardInit() {
         // LOAD DATA FOR RESTORED FILTERS
         // ==================================
 
-       await loadDashboard();
+     //  await loadDashboard();
 
     } catch (err) {
 
