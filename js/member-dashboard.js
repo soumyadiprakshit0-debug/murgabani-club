@@ -314,6 +314,12 @@ async function loadDashboardInit() {
                 : "#dc2626";
 
 
+                // ==================================
+        // LOAD DATA FOR RESTORED FILTERS
+        // ==================================
+
+        await loadDashboard();
+
     } catch (err) {
 
         console.error(err);
