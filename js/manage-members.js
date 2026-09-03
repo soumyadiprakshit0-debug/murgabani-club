@@ -1,6 +1,48 @@
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxVNrYgPMqWGibcTQyFth5aPYwJmP4cbeW29sUZaAUjeBtD3Ap_T6ztRBqO_eYAqW1D/exec";
 
+// ======================================
+// ADMIN ACCESS PROTECTION
+// ======================================
+
+(function () {
+
+    const loggedIn =
+        sessionStorage.getItem("loggedIn");
+
+    const role =
+        sessionStorage.getItem("memberRole");
+
+    if (loggedIn !== "true") {
+
+        alert("Please login first.");
+
+        window.location.replace(
+            "login.html"
+        );
+
+        return;
+    }
+
+    if (
+        !role ||
+        role.toLowerCase() !== "admin"
+    ) {
+
+        alert(
+            "Access denied. Admin login required."
+        );
+
+        window.location.replace(
+            "member-dashboard.html"
+        );
+
+        return;
+    }
+
+})();
+
+
 // ===============================
 // ELEMENTS
 // ===============================
