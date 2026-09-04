@@ -1,53 +1,98 @@
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxVNrYgPMqWGibcTQyFth5aPYwJmP4cbeW29sUZaAUjeBtD3Ap_T6ztRBqO_eYAqW1D/exec";
 
-// Toast
+
+// ==========================================
+// Toast Notification
+// ==========================================
+
 const toast = document.getElementById("toast");
 const toastIcon = document.getElementById("toastIcon");
 const toastMessage = document.getElementById("toastMessage");
 
-function showToast(type, message){
+function showToast(type, message) {
 
     toast.className = "toast";
 
-    if(type==="success"){
+    if (type === "success") {
         toast.classList.add("success");
-        toastIcon.textContent="✅";
+        toastIcon.textContent = "✅";
     }
 
-    if(type==="error"){
+    if (type === "error") {
         toast.classList.add("error");
-        toastIcon.textContent="❌";
+        toastIcon.textContent = "❌";
     }
 
-    if(type==="warning"){
+    if (type === "warning") {
         toast.classList.add("warning");
-        toastIcon.textContent="⚠️";
+        toastIcon.textContent = "⚠️";
     }
 
-    toastMessage.textContent=message;
+    toastMessage.textContent = message;
 
     toast.classList.add("show");
 
-    setTimeout(()=>{
+    setTimeout(() => {
         toast.classList.remove("show");
-    },15000);
-
+    }, 15000);
 }
 
-// Get logged-in member
+
+// ==========================================
+// Button Spinner
+// ==========================================
+
+function showButtonSpinner(button, text) {
+
+    button.disabled = true;
+
+    button.innerHTML = `
+        <span class="button-spinner"></span>
+        <span>${text}</span>
+    `;
+}
+
+
+function resetButton(button) {
+
+    button.disabled = false;
+
+    button.innerHTML = "Change Password";
+}
+
+
+// ==========================================
+// Get Logged-in Member
+// ==========================================
+
 const memberId = sessionStorage.getItem("memberId");
 
-if(!memberId){
-    window.location.href="login.html";
+
+// ==========================================
+// Check Login
+// ==========================================
+
+if (!memberId) {
+
+    window.location.replace("login.html");
+
+} else {
+
+    document.getElementById("memberId").value = memberId;
+
 }
 
-document.getElementById("memberId").value = memberId;
 
+// ==========================================
 // Change Password
-document
-.getElementById("changePasswordBtn")
-.addEventListener("click", async()=>{
+// ==========================================
+
+const changePasswordBtn =
+    document.getElementById("changePasswordBtn");
+
+
+changePasswordBtn.addEventListener("click", async () => {
 
     const newPassword =
         document.getElementById("newPassword").value.trim();
@@ -55,76 +100,155 @@ document
     const confirmPassword =
         document.getElementById("confirmPassword").value.trim();
 
-    if(newPassword.length<8){
+
+    // ======================================
+    // Validation
+    // ======================================
+
+    if (newPassword.length < 8) {
+
         showToast(
             "warning",
             "Password must be at least 8 characters."
         );
+
         return;
     }
 
-    if(newPassword==="123456789"){
+
+    if (newPassword === "123456789") {
+
         showToast(
             "warning",
             "Choose a different password."
         );
+
         return;
     }
 
-    if(newPassword!==confirmPassword){
+
+    if (newPassword !== confirmPassword) {
+
         showToast(
             "warning",
             "Passwords do not match."
         );
+
         return;
     }
 
-    try{
+
+    // ======================================
+    // Show Spinner
+    // ======================================
+
+    showButtonSpinner(
+        changePasswordBtn,
+        "Changing Password..."
+    );
 
 
-      
+    // ======================================
+    // API Request
+    // ======================================
+
+    try {
+
         const response = await fetch(
 
             API_URL +
             "?action=changePassword" +
-            "&memberId=" + encodeURIComponent(memberId) +
-            "&password=" + encodeURIComponent(newPassword)
+            "&memberId=" +
+            encodeURIComponent(memberId) +
+            "&password=" +
+            encodeURIComponent(newPassword)
 
         );
 
+
+        // ==================================
+        // Check HTTP Response
+        // ==================================
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Server returned HTTP " + response.status
+            );
+
+        }
+
+
         const data = await response.json();
 
-        if(!data.success){
+
+        // ==================================
+        // API Failure
+        // ==================================
+
+        if (!data.success) {
+
+            resetButton(changePasswordBtn);
+
             showToast(
                 "error",
-                data.message
+                data.message || "Password change failed."
             );
+
             return;
         }
 
-const btn = document.getElementById("changePasswordBtn");
-btn.disabled = true;
-btn.textContent = "Redirecting...";
-      
+
+        // ==================================
+        // Password Changed Successfully
+        // ==================================
+
         showToast(
-    "success",
-    "Password changed successfully. Redirecting to login..."
-);
+            "success",
+            "Password changed successfully. Redirecting to login..."
+        );
 
-// Clear the temporary session
-sessionStorage.removeItem("memberId");
 
-setTimeout(() => {
+        // Change button state
+        changePasswordBtn.disabled = true;
 
-    sessionStorage.clear();
+        changePasswordBtn.innerHTML = `
+            <span class="button-spinner"></span>
+            <span>Redirecting...</span>
+        `;
 
-    window.location.href = "/login.html";
 
-}, 2000);
+        // ==================================
+        // Clear Session
+        // ==================================
 
-    }catch(err){
+        sessionStorage.clear();
 
-        console.error(err);
+
+        // ==================================
+        // Redirect
+        // IMPORTANT:
+        // Relative path works with GitHub Pages
+        // ==================================
+
+        setTimeout(() => {
+
+            window.location.replace("login.html");
+
+        }, 2000);
+
+
+    } catch (error) {
+
+        console.error(
+            "Change Password Error:",
+            error
+        );
+
+
+        // Restore button
+        resetButton(changePasswordBtn);
+
 
         showToast(
             "error",
